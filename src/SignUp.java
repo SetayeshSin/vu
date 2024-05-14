@@ -5,8 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.Arrays;
 
 public class SignUp {
-    public static User[] userList=new User[1000];
-    public static int userCount=1;
     public JFrame frame=new JFrame();
     public JPanel panel=new JPanel();
     public String firstName;
@@ -87,9 +85,9 @@ public class SignUp {
         this.password=password;
         this.educationalID=educationalID;
        // if (sw == 1) {
-            userList[0]=new User(this,home);
-            userCount++;
-            userList[0].menu();
+            home.userList[home.userCount]=new User(this,home);
+            home.userCount++;
+            home.userList[home.userCount-1].menu();
             frame.dispose();
        // }
     }

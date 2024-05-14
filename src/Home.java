@@ -7,7 +7,8 @@ public class Home {
     public JFrame frame;
     public JPanel panel;
     public Home home=this;
-
+    public User[] userList=new User[1000];
+    public int userCount=0;
     public void homePage(){
         frame=new JFrame();
         panel=new JPanel();

@@ -11,15 +11,17 @@ public class Login {
     public Login(Home home){
         this.home=home;
     }
-    public void checkInfo(String educationalID,String password){
-       if(SignUp.userCount==0) {
+    public void checkInfo(String id,String pass){
+        ifelse: if(home.userCount==0) {
             JOptionPane.showMessageDialog(null, "                     user not founded!!", "Login Failed!!", JOptionPane.PLAIN_MESSAGE);
         }
        else{
-            for (int i = 0; i <1; i++) {
-                if (educationalID.equals(SignUp.userList[i].signUpInfo.educationalID) && password.equals(SignUp.userList[i].signUpInfo.password)) {
-                    SignUp.userList[i].menu();
+            for (int i = 0; i < home.userCount; i++) {
+               //if (educationalID.equals(home.userList[i].signUpInfo.educationalID) && password.equals(home.userList[i].signUpInfo.password)) {
+                if(home.userList[i].signUpInfo.educationalID.equals(id)&&home.userList[i].signUpInfo.password.equals(pass)){
+                    home.userList[i].menu();
                     frame.dispose();
+                    break ifelse;
                 }
             }
            JOptionPane.showMessageDialog(null, "                     user not founded!!", "Login Failed!!", JOptionPane.PLAIN_MESSAGE);
@@ -43,7 +45,7 @@ public class Login {
              @Override
              public void actionPerformed(ActionEvent e) {
                  String educationalId=text.getText();
-                 String password= Arrays.toString(pass.getPassword());
+                 String password=new String(pass.getPassword());
                  checkInfo(educationalId,password);
              }
          });
