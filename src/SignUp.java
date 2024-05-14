@@ -22,7 +22,7 @@ public class SignUp {
         this.home=home;
     }
     public void checkSignUp(String firstName,String lastName,String fieldOfStudy,String userName,String educationalID,String email,String phoneNumber,String userRole,String password,String repeatPassword) {
-        /*int sw = 1;
+        int sw = 1;
         if (isUsernameValid(userName)) this.userName = userName;
         else {
             JOptionPane.showMessageDialog(null, "          username " + userName + " is not valid!!", "SignUp Failed!!", JOptionPane.PLAIN_MESSAGE);
@@ -81,15 +81,13 @@ public class SignUp {
         } else {
             JOptionPane.showMessageDialog(null, "          repeatPassword " + repeatPassword + " is not valid!!", "SignUp Failed!!", JOptionPane.PLAIN_MESSAGE);
             sw = 0;
-        }*/
-        this.password=password;
-        this.educationalID=educationalID;
-       // if (sw == 1) {
+           }
+        if (sw == 1) {
             home.userList[home.userCount]=new User(this,home);
             home.userCount++;
             home.userList[home.userCount-1].menu();
             frame.dispose();
-       // }
+        }
     }
     public static boolean isValidInput1(String input){
         return input.matches("^[a-zA-Z ]{1,18}$");

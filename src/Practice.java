@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 public class Practice {
     public String name;
     public String status;
-
     public double time;
     public void practicePage(JFrame frame){
         JDialog info = new JDialog(frame,name+" practice",true);
