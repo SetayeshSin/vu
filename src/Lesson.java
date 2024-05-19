@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Lesson {
+      public String name;
+      public Student[] lessonStudent=new Student[100];
       JFrame frame=new JFrame();
       public Exam[] examList=new Exam[5];
       public Notif[] notifList=new Notif[10];
@@ -40,15 +42,15 @@ public class Lesson {
           for(int i=0;i<5;i++) {
               final int j=i;
               JButton practiceButton=new JButton(practiceList[i].name);
-              if(practiceList[i]==null)practiceButton.setVisible(false);
-              else{
+             // if(practiceList[i]==null)practiceButton.setVisible(false);
+           //   else{
                   practiceButton.addActionListener(new ActionListener() {
                       @Override
                       public void actionPerformed(ActionEvent e) {
                           practiceList[j].practicePage(frame);
                       }
                   });
-              }
+          //    }
               practicePanel.add(practiceButton);
           }
           frame.add(examPanel);

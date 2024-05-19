@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class User {
+public class Student {
     public SignUp signUpInfo;
     public JFrame frame=new JFrame();
     public Lesson[] lessonsList=new Lesson[12];
@@ -12,7 +12,7 @@ public class User {
     public JPanel notifPanel=new JPanel();
     public JPanel profPanel;
     public Home home;
-    public User(SignUp signUpInfo,Home home){
+    public Student(SignUp signUpInfo,Home home){
         this.signUpInfo=signUpInfo;
         this.home=home;
     }
@@ -31,15 +31,15 @@ public class User {
         for(int i=0;i<12;i++){
             final int j=i;
             JButton lessonButton=new JButton();
-         //   if(lessonsList[i]==null)lessonButton.setVisible(false);
-        //    else{
-                lessonButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                           lessonsList[j].lessonMenu();
-                    }
-                });
-         //   }
+            //   if(lessonsList[i]==null)lessonButton.setVisible(false);
+            //    else{
+            lessonButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    lessonsList[j].lessonMenu();
+                }
+            });
+            //   }
             lessonPanel.add(lessonButton);
         }
         JButton homeButton=new JButton("Home");

@@ -12,14 +12,30 @@ public class Login {
         this.home=home;
     }
     public void checkInfo(String id,String pass){
-        ifelse: if(home.userCount==0) {
+        ifelse: if(home.studentCount==0||home.professorCount==0||home.officialCount==0) {
             JOptionPane.showMessageDialog(null, "                     user not founded!!", "Login Failed!!", JOptionPane.PLAIN_MESSAGE);
         }
        else{
-            for (int i = 0; i < home.userCount; i++) {
+            for (int i = 0; i < home.studentCount; i++) {
                //if (educationalID.equals(home.userList[i].signUpInfo.educationalID) && password.equals(home.userList[i].signUpInfo.password)) {
-                if(home.userList[i].signUpInfo.educationalID.equals(id)&&home.userList[i].signUpInfo.password.equals(pass)){
-                    home.userList[i].menu();
+                if(home.studentList[i].signUpInfo.educationalID.equals(id)&&home.studentList[i].signUpInfo.password.equals(pass)){
+                    home.studentList[i].menu();
+                    frame.dispose();
+                    break ifelse;
+                }
+            }
+            for (int i = 0; i < home.officialCount; i++) {
+                //if (educationalID.equals(home.userList[i].signUpInfo.educationalID) && password.equals(home.userList[i].signUpInfo.password)) {
+                if(home.officialList[i].signUpInfo.educationalID.equals(id)&&home.officialList[i].signUpInfo.password.equals(pass)){
+                    home.officialList[i].menu();
+                    frame.dispose();
+                    break ifelse;
+                }
+            }
+            for (int i = 0; i < home.professorCount; i++) {
+                //if (educationalID.equals(home.userList[i].signUpInfo.educationalID) && password.equals(home.userList[i].signUpInfo.password)) {
+                if(home.professorList[i].signUpInfo.educationalID.equals(id)&&home.professorList[i].signUpInfo.password.equals(pass)){
+                    home.professorList[i].menu();
                     frame.dispose();
                     break ifelse;
                 }

@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class User {
+public class Professor {
     public SignUp signUpInfo;
     public JFrame frame=new JFrame();
     public Lesson[] lessonsList=new Lesson[12];
@@ -11,8 +11,10 @@ public class User {
     public JPanel taskPanel=new JPanel();
     public JPanel notifPanel=new JPanel();
     public JPanel profPanel;
+    public JPanel createLessonPanel;
     public Home home;
-    public User(SignUp signUpInfo,Home home){
+    public Lesson lesson;
+    public Professor(SignUp signUpInfo,Home home){
         this.signUpInfo=signUpInfo;
         this.home=home;
     }
@@ -25,21 +27,35 @@ public class User {
         profPanel.setLayout(new GridLayout(2,1));
         profPanel.add(new JLabel(signUpInfo.firstName + " " + signUpInfo.lastName));
         profPanel.add(new JLabel(signUpInfo.educationalID));
+        JButton createButton=new JButton("create new Lesson");
+        createButton.setBounds(100,500,150,70);
+        createButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lesson=new Lesson();
+                lesson.name=JOptionPane.showInputDialog(null,"please enter the name of lesson: ","Name",JOptionPane.PLAIN_MESSAGE);
+
+                lesson.name=JOptionPane.showInputDialog(null,"please enter the name of lesson: ","Name",JOptionPane.PLAIN_MESSAGE);
+                frame.remove(profPanel);
+                frame.dispose();
+                home.homePage();
+            }
+        });
         lessonPanel=new JPanel();
-        lessonPanel.setBounds(900,100,600,450);
+        lessonPanel.setBounds(500,100,100,70);
         lessonPanel.setLayout(new GridLayout(3,4));
         for(int i=0;i<12;i++){
             final int j=i;
             JButton lessonButton=new JButton();
-         //   if(lessonsList[i]==null)lessonButton.setVisible(false);
-        //    else{
-                lessonButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                           lessonsList[j].lessonMenu();
-                    }
-                });
-         //   }
+            //   if(lessonsList[i]==null)lessonButton.setVisible(false);
+            //    else{
+            lessonButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    lessonsList[j].lessonMenu();
+                }
+            });
+            //   }
             lessonPanel.add(lessonButton);
         }
         JButton homeButton=new JButton("Home");

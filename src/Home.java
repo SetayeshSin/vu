@@ -7,8 +7,12 @@ public class Home {
     public JFrame frame;
     public JPanel panel;
     public Home home=this;
-    public User[] userList=new User[1000];
-    public int userCount=0;
+    public Student[] studentList=new Student[1000];
+    public int studentCount=0;
+    public Professor[] professorList=new Professor[1000];
+    public int professorCount=0;
+    public Official[] officialList=new Official[1000];
+    public int officialCount=0;
     public void homePage(){
         frame=new JFrame();
         panel=new JPanel();

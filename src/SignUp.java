@@ -83,9 +83,21 @@ public class SignUp {
             sw = 0;
            }
         if (sw == 1) {
-            home.userList[home.userCount]=new User(this,home);
-            home.userCount++;
-            home.userList[home.userCount-1].menu();
+            if(userRole.equals("student")){
+                home.studentList[home.studentCount]=new Student(this,home);
+                home.studentCount++;
+                home.studentList[home.studentCount-1].menu();
+            }
+            else if(userRole.equals("professor")){
+                home.studentList[home.studentCount]=new Student(this,home);
+                home.studentCount++;
+                home.studentList[home.studentCount-1].menu();
+            }
+            else if(userRole.equals("official")){
+                home.studentList[home.studentCount]=new Student(this,home);
+                home.studentCount++;
+                home.studentList[home.studentCount-1].menu();
+            }
             frame.dispose();
         }
     }

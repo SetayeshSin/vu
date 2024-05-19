@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44324d9a-cf80-4b37-9415-6022f948b034" name="Changes" comment="practice">
+      <change afterPath="$PROJECT_DIR$/src/Official.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Professor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lesson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +46,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sesin/Desktop/java/midterm/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -69,7 +77,10 @@
       <workItem from="1715537337409" duration="5951000" />
       <workItem from="1715595342992" duration="5299000" />
       <workItem from="1715690264038" duration="71000" />
-      <workItem from="1715690355421" duration="318000" />
+      <workItem from="1715690355421" duration="471000" />
+      <workItem from="1715692478953" duration="2792000" />
+      <workItem from="1715698692493" duration="2385000" />
+      <workItem from="1715931616867" duration="39000" />
     </task>
     <task id="LOCAL-00001" summary="login and signup">
       <option name="closed" value="true" />
@@ -95,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715670422950</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="practice">
+      <option name="closed" value="true" />
+      <created>1715690755598</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715690755598</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
