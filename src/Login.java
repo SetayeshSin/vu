@@ -12,35 +12,38 @@ public class Login {
         this.home=home;
     }
     public void checkInfo(String id,String pass){
-        ifelse: if(home.studentCount==0||home.professorCount==0||home.officialCount==0) {
+        int sw=0;
+        System.out.println(home.studentCount);
+        if(home.studentCount==0&&home.professorCount==0&&home.officialCount==0) {
             JOptionPane.showMessageDialog(null, "                     user not founded!!", "Login Failed!!", JOptionPane.PLAIN_MESSAGE);
         }
-       else{
-            for (int i = 0; i < home.studentCount; i++) {
-               //if (educationalID.equals(home.userList[i].signUpInfo.educationalID) && password.equals(home.userList[i].signUpInfo.password)) {
-                if(home.studentList[i].signUpInfo.educationalID.equals(id)&&home.studentList[i].signUpInfo.password.equals(pass)){
+        else{
+            System.out.println(home.studentCount);
+            for (int i = 0; i < home.studentCount&&sw==0; i++) {
+                //if (educationalID.equals(home.userList[i].signUpInfo.educationalID) && password.equals(home.userList[i].signUpInfo.password)) {
+                if (home.studentList[i].signUpInfo.educationalID.equals(id) && home.studentList[i].signUpInfo.password.equals(pass)) {
+                    sw=1;
                     home.studentList[i].menu();
                     frame.dispose();
-                    break ifelse;
                 }
             }
-            for (int i = 0; i < home.officialCount; i++) {
+            for (int i = 0; i < home.officialCount&&sw==0; i++) {
                 //if (educationalID.equals(home.userList[i].signUpInfo.educationalID) && password.equals(home.userList[i].signUpInfo.password)) {
-                if(home.officialList[i].signUpInfo.educationalID.equals(id)&&home.officialList[i].signUpInfo.password.equals(pass)){
+                if (home.officialList[i].signUpInfo.educationalID.equals(id) && home.officialList[i].signUpInfo.password.equals(pass)) {
                     home.officialList[i].menu();
                     frame.dispose();
-                    break ifelse;
+                    sw=1;
                 }
             }
-            for (int i = 0; i < home.professorCount; i++) {
+            for (int i = 0; i < home.professorCount&&sw==0; i++) {
                 //if (educationalID.equals(home.userList[i].signUpInfo.educationalID) && password.equals(home.userList[i].signUpInfo.password)) {
-                if(home.professorList[i].signUpInfo.educationalID.equals(id)&&home.professorList[i].signUpInfo.password.equals(pass)){
+                if (home.professorList[i].signUpInfo.educationalID.equals(id) && home.professorList[i].signUpInfo.password.equals(pass)) {
                     home.professorList[i].menu();
                     frame.dispose();
-                    break ifelse;
+                    sw=1;
                 }
             }
-           JOptionPane.showMessageDialog(null, "                     user not founded!!", "Login Failed!!", JOptionPane.PLAIN_MESSAGE);
+           if(sw==0)JOptionPane.showMessageDialog(null, "                     user not founded!!", "Login Failed!!", JOptionPane.PLAIN_MESSAGE);
        }
     }
     public void loginPanel(){

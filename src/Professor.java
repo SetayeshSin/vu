@@ -34,28 +34,26 @@ public class Professor {
             public void actionPerformed(ActionEvent e) {
                 lesson=new Lesson();
                 lesson.name=JOptionPane.showInputDialog(null,"please enter the name of lesson: ","Name",JOptionPane.PLAIN_MESSAGE);
-
-                lesson.name=JOptionPane.showInputDialog(null,"please enter the name of lesson: ","Name",JOptionPane.PLAIN_MESSAGE);
                 frame.remove(profPanel);
+                lesson.lessonMenu();
                 frame.dispose();
-                home.homePage();
             }
         });
         lessonPanel=new JPanel();
-        lessonPanel.setBounds(500,100,100,70);
+        lessonPanel.setBounds(900,100,600,450);
         lessonPanel.setLayout(new GridLayout(3,4));
         for(int i=0;i<12;i++){
             final int j=i;
             JButton lessonButton=new JButton();
-            //   if(lessonsList[i]==null)lessonButton.setVisible(false);
-            //    else{
+            if(lessonsList[i]==null)lessonButton.setVisible(false);
+            else{
             lessonButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     lessonsList[j].lessonMenu();
                 }
             });
-            //   }
+            }
             lessonPanel.add(lessonButton);
         }
         JButton homeButton=new JButton("Home");
@@ -69,6 +67,7 @@ public class Professor {
             }
         });
         frame.add(homeButton);
+        frame.add(createButton);
         frame.add(profPanel);
         frame.add(lessonPanel);
         frame.setVisible(true);

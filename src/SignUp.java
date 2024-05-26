@@ -23,7 +23,7 @@ public class SignUp {
     }
     public void checkSignUp(String firstName,String lastName,String fieldOfStudy,String userName,String educationalID,String email,String phoneNumber,String userRole,String password,String repeatPassword) {
         int sw = 1;
-        if (isUsernameValid(userName)) this.userName = userName;
+        /*if (isUsernameValid(userName)) this.userName = userName;
         else {
             JOptionPane.showMessageDialog(null, "          username " + userName + " is not valid!!", "SignUp Failed!!", JOptionPane.PLAIN_MESSAGE);
             sw = 0;
@@ -57,7 +57,7 @@ public class SignUp {
         } else {
             JOptionPane.showMessageDialog(null, "          phoneNumber " + phoneNumber + " is not valid!!", "SignUp Failed!!", JOptionPane.PLAIN_MESSAGE);
             sw = 0;
-        }
+        }*/
         if (!setUserRole(userRole)) {
             JOptionPane.showMessageDialog(null, "          userrole " + userRole + " is not valid!!", "SignUp Failed!!", JOptionPane.PLAIN_MESSAGE);
             sw = 0;
@@ -89,14 +89,14 @@ public class SignUp {
                 home.studentList[home.studentCount-1].menu();
             }
             else if(userRole.equals("professor")){
-                home.studentList[home.studentCount]=new Student(this,home);
-                home.studentCount++;
-                home.studentList[home.studentCount-1].menu();
+                home.professorList[home.professorCount]=new Professor(this,home);
+                home.professorCount++;
+                home.professorList[home.professorCount-1].menu();
             }
             else if(userRole.equals("official")){
-                home.studentList[home.studentCount]=new Student(this,home);
-                home.studentCount++;
-                home.studentList[home.studentCount-1].menu();
+                home.officialList[home.officialCount]=new Official(this,home);
+                home.officialCount++;
+                home.officialList[home.officialCount-1].menu();
             }
             frame.dispose();
         }
