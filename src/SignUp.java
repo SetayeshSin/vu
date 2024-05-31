@@ -9,6 +9,8 @@ public class SignUp {
     public JPanel panel=new JPanel();
     public String firstName;
     public String lastName;
+    public String fullName;
+    public static int i = 0;
     private String userName;
     private String fieldOfStudy;
     public String educationalID;
@@ -23,16 +25,16 @@ public class SignUp {
     }
     public void checkSignUp(String firstName,String lastName,String fieldOfStudy,String userName,String educationalID,String email,String phoneNumber,String userRole,String password,String repeatPassword) {
         int sw = 1;
-        /*if (isUsernameValid(userName)) this.userName = userName;
+        if (isUsernameValid(userName)) this.userName = userName;
         else {
             JOptionPane.showMessageDialog(null, "          username " + userName + " is not valid!!", "SignUp Failed!!", JOptionPane.PLAIN_MESSAGE);
             sw = 0;
         }
         if (isValidInput1(firstName)) {
-                this.firstName = firstName;
-            } else {
-                JOptionPane.showMessageDialog(null, "          firstname " + firstName + " is not valid!!", "SignUp Failed!!", JOptionPane.PLAIN_MESSAGE);
-                sw = 0;
+            this.firstName = firstName;
+        } else {
+            JOptionPane.showMessageDialog(null, "          firstname " + firstName + " is not valid!!", "SignUp Failed!!", JOptionPane.PLAIN_MESSAGE);
+            sw = 0;
         }
         if (isValidInput1(lastName)) {
             this.lastName = lastName;
@@ -57,7 +59,7 @@ public class SignUp {
         } else {
             JOptionPane.showMessageDialog(null, "          phoneNumber " + phoneNumber + " is not valid!!", "SignUp Failed!!", JOptionPane.PLAIN_MESSAGE);
             sw = 0;
-        }*/
+        }
         if (!setUserRole(userRole)) {
             JOptionPane.showMessageDialog(null, "          userrole " + userRole + " is not valid!!", "SignUp Failed!!", JOptionPane.PLAIN_MESSAGE);
             sw = 0;
@@ -81,9 +83,10 @@ public class SignUp {
         } else {
             JOptionPane.showMessageDialog(null, "          repeatPassword " + repeatPassword + " is not valid!!", "SignUp Failed!!", JOptionPane.PLAIN_MESSAGE);
             sw = 0;
-           }
+        }
         if (sw == 1) {
             if(userRole.equals("student")){
+                fullName = firstName+" "+lastName;
                 home.studentList[home.studentCount]=new Student(this,home);
                 home.studentCount++;
                 home.studentList[home.studentCount-1].menu();

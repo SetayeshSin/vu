@@ -36,7 +36,7 @@ public class Official {
             lessonButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    lessonsList[j].lessonMenu();
+                    lessonsList[j].officialLessonMenu();
                 }
             });
             //   }

@@ -43,33 +43,33 @@ public class Login {
                     sw=1;
                 }
             }
-           if(sw==0)JOptionPane.showMessageDialog(null, "                     user not founded!!", "Login Failed!!", JOptionPane.PLAIN_MESSAGE);
-       }
+            if(sw==0)JOptionPane.showMessageDialog(null, "                     user not founded!!", "Login Failed!!", JOptionPane.PLAIN_MESSAGE);
+        }
     }
     public void loginPanel(){
-         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-         frame.setSize(1600,900);
-         frame.setLayout(null);
-         panel.setBounds(600,300,350,100);
-         panel.setLayout(new GridLayout(2,2));
-         panel.add(new JLabel("educationalID:"));
-         JTextField text=new JTextField(0);
-         panel.add(text);
-         panel.add(new JLabel("password:"));
-         JPasswordField pass=new JPasswordField(0);
-         panel.add(pass);
-         JButton loginButton=new JButton("Login");
-         loginButton.setBounds(625,410,300,50);
-         loginButton.addActionListener(new ActionListener() {
-             @Override
-             public void actionPerformed(ActionEvent e) {
-                 String educationalId=text.getText();
-                 String password=new String(pass.getPassword());
-                 checkInfo(educationalId,password);
-             }
-         });
-       frame.add(loginButton);
-       frame.add(panel);
-       frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(1600,900);
+        frame.setLayout(null);
+        panel.setBounds(600,300,350,100);
+        panel.setLayout(new GridLayout(2,2));
+        panel.add(new JLabel("educationalID:"));
+        JTextField text=new JTextField(0);
+        panel.add(text);
+        panel.add(new JLabel("password:"));
+        JPasswordField pass=new JPasswordField(0);
+        panel.add(pass);
+        JButton loginButton=new JButton("Login");
+        loginButton.setBounds(625,410,300,50);
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String educationalId=text.getText();
+                String password=new String(pass.getPassword());
+                checkInfo(educationalId,password);
+            }
+        });
+        frame.add(loginButton);
+        frame.add(panel);
+        frame.setVisible(true);
     }
 }
